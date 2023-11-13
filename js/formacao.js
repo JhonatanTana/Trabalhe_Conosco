@@ -24,15 +24,15 @@ function adicionarFormacao() {
             <div class="coolinput">
               <label for="input" class="text">Tipo:</label>
               <select name="Escolaridade${contadorFormacoes}" id="tipo">
-                <option value="----"></option>
-                <option value="Ensino Medio">Ensino Médio Completo</option>
-                <option value="Ensino Medio">Ensino Médio Incompleto</option>
-                <option value="Ensino Fundamental">Ensino Fundamental Completo</option>
-                <option value="Ensino Fundamental">Ensino Fundamental Incompleto</option>
-                <option value="Ensino Superior Completo">Ensino Superior Completo</option>
-                <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-                <option value="Pós-Graduação">Pós-Graduação</option>
-                <option value="Curso Tecnico">Curso Tecnico</option>
+                <option name="----"></option>
+                <option name="Ensino Medio">Ensino Médio Completo</option>
+                <option name="Ensino Medio">Ensino Médio Incompleto</option>
+                <option name="Ensino Fundamental">Ensino Fundamental Completo</option>
+                <option name="Ensino Fundamental">Ensino Fundamental Incompleto</option>
+                <option name="Ensino Superior Completo">Ensino Superior Completo</option>
+                <option name="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                <option name="Pós-Graduação">Pós-Graduação</option>
+                <option name="Curso Tecnico">Curso Tecnico</option>
               </select>
             </div>
             <div class="coolinput">

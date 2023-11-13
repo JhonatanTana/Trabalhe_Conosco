@@ -28,35 +28,35 @@
     <div id="dadosContainer">
       <div class="container">
         <div class="coolinput">
-          <label for="input" class="text">Nome:</label>
+          <label class="text">Nome:</label>
           <input type="text" placeholder="Nome" name="Nome" class="input">
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Sobrenome:</label>
+          <label class="text">Sobrenome:</label>
           <input type="text" placeholder="Sobrenome" name="Sobrenome" class="input">
         </div>
         <div class="coolinput">
-          <label for="input" class="text">CPF:</label>
+          <label class="text">CPF:</label>
           <input type="text" placeholder="CPF (Opcional)" name="CPF" class="input" oninput="formatCPF(this)">
         </div>
       </div>
       <div class="container">
         <div class="coolinput">
-          <label for="input" class="text">Data de Nascimento:</label>
+          <label class="text">Data de Nascimento:</label>
           <input type="date" name="Idade" class="input">
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Telefone:</label>
+          <label class="text">Telefone:</label>
           <input type="tel" placeholder="(12) 12345-6789" name="Telefone" class="input"  oninput="formatCelular(this)">
         </div>
         <div class="coolinput">
-          <label for="input" class="text">E-mail:</label>
+          <label class="text">E-mail:</label>
           <input type="email" placeholder="seuemail@email.com" name="Email" class="input" >
         </div>
       </div>
       <div class="container" id="container3">
         <div class="coolinput">
-          <label for="input" class="text">Sexo:</label>
+          <label class="text">Sexo:</label>
           <select name="Sexo" id="">
             <option name="----"></option>
             <option name="Feminino">Feminino</option>
@@ -65,8 +65,8 @@
           </select>
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Estado Civil:</label>
-          <select name="Estado_Civil" id="">
+          <label class="text">Estado Civil:</label>
+          <select name="Estado_Civil">
             <option name="----"></option>
             <option name="Solteiro">Solteiro/a</option>
             <option name="Casado">Casado/a</option>
@@ -75,7 +75,7 @@
           </select>
         </div>
         <div class="coolinput">
-          <label for="input" class="text">CNH:</label>
+          <label class="text">CNH:</label>
           <select name="Habilitação" id="CNH">
             <option name="----"></option>
             <option name="Não possuo">Não possuo</option>
@@ -107,29 +107,29 @@
     <div id="enderecoContainer">
       <div class="container">
         <div class="coolinput">
-          <label for="input" class="text">CEP:</label>
+          <label class="text">CEP:</label>
           <input type="tel" placeholder="00000-000" name="CEP" class="input" id="cep-input"  onblur="formatCEP(this)" oninput="getEndereco()">
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Logradouro:</label>
+          <label class="text">Logradouro:</label>
           <input type="text" placeholder="Avenida Ipiranga" id="logradouro-input" name="Logradouro" class="input" >
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Numero:</label>
+          <label class="text">Numero:</label>
           <input type="number" placeholder="Numero" name="Numero" class="input" >
         </div>
       </div>
       <div class="container">
         <div class="coolinput">
-          <label for="input" class="text">Bairro:</label>
+          <label class="text">Bairro:</label>
           <input type="text" placeholder="Bairro" id="bairro-input" name="Bairro" class="input" >
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Estado:</label>
+          <label class="text">Estado:</label>
           <input type="text" id="estado-input" placeholder="Estado" name="Estado" class="input" >
         </div>
         <div class="coolinput">
-          <label for="input" class="text">Cidade:</label>
+          <label class="text">Cidade:</label>
           <input type="text" id="cidade-input" placeholder="Cidade" name="Cidade" class="input" >
         </div>
       </div>
@@ -143,51 +143,51 @@
     <div id="interessesContainer" class="checkbox-wrapper-13">
       <div class="areas_atuacao">
         <label for="">
-          <input type="checkbox" name="interesses[]" value="TI" id="">
+          <input type="checkbox" name="interesses[]" value="TI">
           T.I
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Comercial" id="">
+          <input type="checkbox" name="interesses[]" value="Comercial">
           Comercial
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Financeiro" id="">
+          <input type="checkbox" name="interesses[]" value="Financeiro">
           Financeiro
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Logistica" id="">
+          <input type="checkbox" name="interesses[]" value="Logistica">
           Logística
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Consultoria" id="">
+          <input type="checkbox" name="interesses[]" value="Consultoria">
           Consultoria
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Marketing" id="">
+          <input type="checkbox" name="interesses[]" value="Marketing">
           Marketing
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Gestão de Pessoas" id="">
+          <input type="checkbox" name="interesses[]" value="Gestão de Pessoas">
           Gestão de Pessoas
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Contábil" id="">
+          <input type="checkbox" name="interesses[]" value="Contábil">
           Contábil
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Vendas" id="">
+          <input type="checkbox" name="interesses[]" value="Vendas">
           Vendas
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Ecommerce" id="">
+          <input type="checkbox" name="interesses[]" value="Ecommerce">
           Ecommerce
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Fábrica" id="">
+          <input type="checkbox" name="interesses[]" value="Fábrica">
           Fábrica
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Outros" id="">
+          <input type="checkbox" name="interesses[]" value="Outros">
           Outros
         </label>
       </div>
@@ -200,12 +200,12 @@
     <hr class="divisao">
     <div id="formacaoContainer">
       <div class="checkbox" id="formacao_menu">
-        <h4 class="toggle-header" onclick="toggleFormacaoMenu('formacao_menu')" id="formacao">Formação</h4>
+        <h4 onclick="toggleFormacaoMenu('formacao_menu')" class="toggle-header" id="formacao">Formação</h4>
         <div class="content">
           <div class="sub-container">
             <div class="coolinput">
-              <label for="input" class="text">Tipo:</label>
-              <select name="Escolaridade" id="tipo">
+              <label class="text">Tipo:</label>
+              <select name="Escolaridade0" id="tipo">
                 <option name="----"></option>
                 <option name="Ensino Medio">Ensino Médio Completo</option>
                 <option name="Ensino Medio">Ensino Médio Incompleto</option>
@@ -218,22 +218,22 @@
               </select>
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Curso:</label>
-              <input type="text" placeholder="Curso" name="Curso" class="input" id="curso" oninput="exibirConteudo1()">
+              <label class="text">Curso:</label>
+              <input type="text" placeholder="Curso" name="Curso0" class="input" id="curso" oninput="exibirConteudo1()">
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Instituição:</label>
-              <input type="text" placeholder="Instituição" name="Instituição" class="input" id="instituicao" oninput="exibirConteudo1()" >
+              <label class="text">Instituição:</label>
+              <input type="text" placeholder="Instituição" name="Instituição0" class="input" id="instituicao" oninput="exibirConteudo1()" >
             </div>
           </div>
           <div class="sub-container">
             <div class="coolinput">
-              <label for="input" class="text">Inicio:</label>
-              <input type="month" placeholder="Inicio" name="Início" class="input" >
+              <label class="text">Inicio:</label>
+              <input type="month" placeholder="Inicio" name="Início0" class="input" >
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Conclusão:</label>
-              <input type="month" placeholder="Conlusão" name="Conclusão" class="input" >
+              <label class="text">Conclusão:</label>
+              <input type="month" placeholder="Conlusão" name="Conclusão0" class="input" >
             </div>
           </div>
         </div>
@@ -252,22 +252,22 @@
         <div class="content">
           <div class="sub-container">
             <div class="coolinput">
-              <label for="input" class="text">Empresa:</label>
-              <input type="text" placeholder="Empresa" name="Empresa" class="input" id="empresa" oninput="exibirConteudoExp1()" >
+              <label class="text">Empresa:</label>
+              <input type="text" placeholder="Empresa" name="Empresa0" class="input" id="empresa" oninput="exibirConteudoExp1()" >
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Cargo:</label>
-              <input type="text" placeholder="Cargo" name="Cargo" class="input" id="cargo" oninput="exibirConteudoExp1()">
+              <label class="text">Cargo:</label>
+              <input type="text" placeholder="Cargo" name="Cargo0" class="input" id="cargo" oninput="exibirConteudoExp1()">
             </div>
           </div>
           <div class="sub-container">
             <div class="coolinput">
-              <label for="input" class="text">Entrada:</label>
-              <input type="month" placeholder="Inicio" name="Entrada" class="input" id="entrada" oninput="exibirConteudoExp1()">
+              <label class="text">Entrada:</label>
+              <input type="month" placeholder="Inicio" name="Entrada0" class="input" id="entrada" oninput="exibirConteudoExp1()">
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Saída:</label>
-              <input type="month" placeholder="Saída" name="Saída" class="input" id="saida" oninput="exibirConteudoExp1()">
+              <label class="text">Saída:</label>
+              <input type="month" placeholder="Saída" name="Saída0" class="input" id="saida" oninput="exibirConteudoExp1()">
             </div>
           </div>
         </div>
@@ -288,12 +288,12 @@
         <div class="content">
           <div class="sub-container">
             <div class="coolinput">
-              <label for="input" class="text">Idioma:</label>
-              <input type="text" placeholder="idioma" name="Idioma" class="input" id="idioma" oninput="exibirConteudoIdi1()">
+              <label class="text">Idioma:</label>
+              <input type="text" placeholder="idioma" name="Idioma0" class="input" id="idioma" oninput="exibirConteudoIdi1()">
             </div>
             <div class="coolinput">
-              <label for="input" class="text">Nivel:</label>
-              <select name="Nivel" id="nivel" oninput="exibirConteudoIdi1()">
+              <label class="text">Nivel:</label>
+              <select name="Nivel0" id="nivel" oninput="exibirConteudoIdi1()">
                 <option name="----"></option>
                 <option name="A1 - Iniciante">A1 - Iniciante</option>
                 <option name="A2 - Iniciante Avançado">A2 - Iniciante Avançado</option>

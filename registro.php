@@ -2,98 +2,101 @@
 
     /*Variáveis*/
 
-    $nome = str_replace('#', '-', $_POST['Nome']);
-    $sobrenome = str_replace('#', '-', $_POST['Sobrenome']);
-    $cpf = str_replace('#', '-', $_POST['CPF']);
-    $dataNascimento = str_replace('#', '-', $_POST['Idade']);
-    $telefone = str_replace('#', '-', $_POST['Telefone']);
-    $email = str_replace('#', '-', $_POST['Email']);
-    $sexo = str_replace('#', '-', $_POST['Sexo']);
-    $estadoCivil = str_replace('#', '-', $_POST['Estado_Civil']);
-    $habilitacao = str_replace('#', '-', $_POST['Habilitação']);
-    $cep = str_replace('#', '-', $_POST['CEP']);
-    $logradouro = str_replace('#', '-', $_POST['Logradouro']);
-    $numero = str_replace('#', '-', $_POST['Numero']);
-    $bairro = str_replace('#', '-', $_POST['Bairro']);
-    $cidade = str_replace('#', '-', $_POST['Cidade']);
-    $estado = str_replace('#', '-', $_POST['Estado']);
+    $nome = $_POST['Nome'];
+    $sobrenome = $_POST['Sobrenome'];
+    $cpf = $_POST['CPF'];
+    $dataNascimento = $_POST['Idade'];
+    $telefone = $_POST['Telefone'];
+    $email = $_POST['Email'];
+    $sexo = $_POST['Sexo'];
+    $estadoCivil = $_POST['Estado_Civil'];
+    $habilitacao = $_POST['Habilitação'];
+    $cep = $_POST['CEP'];
+    $logradouro = $_POST['Logradouro'];
+    $numero = $_POST['Numero'];
+    $bairro = $_POST['Bairro'];
+    $cidade = $_POST['Cidade'];
+    $estado = $_POST['Estado'];
 
     //Interreses
 
     $interesses = isset($_POST['interesses']) ? $_POST['interesses'] : [];
 
     // Converta o array em uma string separada por vírgulas
-    $interessesStr = implode('/', $interesses);
+    $interesses_prt = implode('/', $interesses);
 
-    //Estudos
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $escolaridade = str_replace('#', '-', $_POST['Escolaridade']);
-    $curso = str_replace('#', '-', $_POST['Curso']);
-    $instituicao = str_replace('#', '-', $_POST['Instituição']);
-    $inicio = str_replace('#', '-', $_POST['Início']);
-    $conclusao = str_replace('#', '-', $_POST['Conclusão']);
+        //Experiencias
 
-    $escolaridade1 = str_replace('#', '-', $_POST['Escolaridade1']);
-    $curso1 = str_replace('#', '-', $_POST['Curso1']);
-    $instituicao1 = str_replace('#', '-', $_POST['Instituição1']);
-    $inicio1 = str_replace('#', '-', $_POST['Início1']);
-    $conclusao1 = str_replace('#', '-', $_POST['Conclusão1']);
+        $numExperiencias = 10; // Número total de experiências (ajuste conforme necessário)
+        $experiencias = array();
 
-    $escolaridade2 = str_replace('#', '-', $_POST['Escolaridade2']);
-    $curso2 = str_replace('#', '-', $_POST['Curso2']);
-    $instituicao2 = str_replace('#', '-', $_POST['Instituição2']);
-    $inicio2 = str_replace('#', '-', $_POST['Início2']);
-    $conclusao2 = str_replace('#', '-', $_POST['Conclusão2']);
+        for ($i = 0; $i < $numExperiencias; $i++) {
+            if (isset($_POST['Cargo' . $i]) || isset($_POST['Empresa' . $i]) || isset($_POST['Entrada' . $i]) || isset($_POST['Saída' . $i])) {
+                $experiencias[$i]['cargo'] = isset($_POST['Cargo' . $i]) ? $_POST['Cargo' . $i] : '';
+                $experiencias[$i]['empresa'] = isset($_POST['Empresa' . $i]) ? $_POST['Empresa' . $i] : '';
+                $experiencias[$i]['entrada'] = isset($_POST['Entrada' . $i]) ? $_POST['Entrada' . $i] : '';
+                $experiencias[$i]['saida'] = isset($_POST['Saída' . $i]) ? $_POST['Saída' . $i] : '';
+            }
+        }
 
-    $escolaridade3 = str_replace('#', '-', $_POST['Escolaridade3']);
-    $curso3 = str_replace('#', '-', $_POST['Curso3']);
-    $instituicao3 = str_replace('#', '-', $_POST['Instituição3']);
-    $inicio3 = str_replace('#', '-', $_POST['Início3']);
-    $conclusao3 = str_replace('#', '-', $_POST['Conclusão3']);
+        //Estudos
 
+        $numEstudos = 10;
+        $estudos = array();
 
-    /*Experiencias*/
+        for ($i = 0; $i < $numEstudos; $i++) {
+            if (isset($_POST['Escolaridade' . $i]) || isset($_POST['Curso' . $i]) || isset($_POST['Instituição' . $i]) || isset($_POST['Início' . $i])|| isset($_POST['Conclusão' . $i])) {
+                $estudos[$i]['escolaridade'] = isset($_POST['Escolaridade' . $i]) ? $_POST['Escolaridade' . $i] : '';
+                $estudos[$i]['curso'] = isset($_POST['Curso' . $i]) ? $_POST['Curso' . $i] : '';
+                $estudos[$i]['instituicao'] = isset($_POST['Instituição' . $i]) ? $_POST['Instituição' . $i] : '';
+                $estudos[$i]['inicio'] = isset($_POST['Início' . $i]) ? $_POST['Início' . $i] : '';
+                $estudos[$i]['conclusao'] = isset($_POST['Conclusão' . $i]) ? $_POST['Conclusão' . $i] : '';
+            }
+        }
 
-    $cargo = str_replace('#', '-', $_POST['Cargo']);
-    $empresa = str_replace('#', '-', $_POST['Empresa']);
-    $entrada = str_replace('#', '-', $_POST['Entrada']);
-    $saida = str_replace('#', '-', $_POST['Saída']);
+        //Idiomas
 
-    $cargo1 = str_replace('#', '-', $_POST['Cargo1']);
-    $empresa1 = str_replace('#', '-', $_POST['Empresa1']);
-    $entrada1 = str_replace('#', '-', $_POST['Entrada1']);
-    $saida1 = str_replace('#', '-', $_POST['Saída1']);
+        $numIdiomas = 10;
+        $idiomas = array();
 
-    $cargo2 = str_replace('#', '-', $_POST['Cargo2']);
-    $empresa2 = str_replace('#', '-', $_POST['Empresa2']);
-    $entrada2 = str_replace('#', '-', $_POST['Entrada2']);
-    $saida2 = str_replace('#', '-', $_POST['Saída2']);
+        for ($i = 0; $i < $numEstudos; $i++) {
+            if (isset($_POST['Idioma' . $i]) || isset($_POST['Nivel' . $i])) {
+                $idiomas[$i]['idioma'] = isset($_POST['Idioma' . $i]) ? $_POST['Idioma' . $i] : '';
+                $idiomas[$i]['nivel'] = isset($_POST['Nivel' . $i]) ? $_POST['Nivel' . $i] : '';
+            }
+        }
 
-    $cargo3 = str_replace('#', '-', $_POST['Cargo3']);
-    $empresa3 = str_replace('#', '-', $_POST['Empresa3']);
-    $entrada3 = str_replace('#', '-', $_POST['Entrada3']);
-    $saida3 = str_replace('#', '-', $_POST['Saída3']);
+    }
 
-    /*Idiomas*/
-
-    $idioma = str_replace('#', '-', $_POST['Idioma']);
-    $nivel = str_replace('#', '-', $_POST['Nível']);
-
-    /*Gravador*/
-
+    $experiencia_prt = '';
+    foreach ($experiencias as $experiencia) {
+        $experiencia_prt .= implode('#', $experiencia). '#';
+    }
+    
+    $estudos_prt = '';
+    foreach ($estudos as $estudo) {
+        $estudos_prt .= implode('#', $estudo). '#';
+    }
+    
+    $idiomas_prt = '';
+    foreach ($idiomas as $idioma) {
+        $idiomas_prt .= implode('#', $idioma). '#';
+    }
+    
+    $arquivo = fopen('banco.hd', 'a');
+    
     $texto =
         $nome . '#' . $sobrenome . '#' . $cpf . '#' . $dataNascimento . '#' . $telefone . '#' . $email . '#' . $sexo . '#' .
         $estadoCivil . '#' . $habilitacao . '#' . $cep . '#' . $logradouro . '#' . $numero . '#' . $bairro . '#' . $cidade . '#' .
-        $interessesStr . '#' . $estado . '#' . $escolaridade . '#' . $curso . '#' . $instituicao . '#' . $inicio . '#' . $conclusao . '#' .
-        $escolaridade1 . '#' . $curso1 . '#' . $instituicao1 . '#' . $inicio1 . '#' . $conclusao1  . '#' . $cargo. '#' . $empresa . '#' .
-        $entrada . '#' . $saida . '#' . $cargo1 . '#' . $empresa1 . '#' . $entrada1 . '#' . $saida1 . '#' . $idioma . '#' . $nivel. PHP_EOL;
-
-    $arquivo = fopen('banco.hd', 'a');
-
+        $interesses_prt . '#' . $estado . '#' . $experiencia_prt . $estudos_prt .  $idiomas_prt .  PHP_EOL;
+    
     fwrite($arquivo, $texto);
+    
     fclose($arquivo);
 
-    header('Location: index.html');
+    //header('Location: index.html');
 
     //Armazenador das fotos
 
@@ -103,6 +106,7 @@
         $nomeArquivo = $nome . ' '. $sobrenome. '-'. $cpf.'.png';
 
         if (move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $nomeArquivo)) {
+            // Se você quiser salvar o nome do arquivo no banco de dados, você pode fazê-lo aqui
 
             echo "Arquivo enviado com sucesso!";
         } else {
@@ -111,4 +115,6 @@
     } else {
         echo "Ocorreu um erro no envio do arquivo.";
     }
+
+
 ?>
