@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <script src="js/formata_CPF_telefone.js"></script>
+  <script src="js/busca_cep.js"></script>
+  <script src="js/disable_input.js"></script>
+  <script src="js/formacao.js"></script>
+  <script src="js/exibicao.js"></script>
+  <title>Trabalhe Conosco - Clube da Casa Nova Era</title>
+</head>
+<body>
+  <header>
+    <img src="src/logo casa.png" alt="">
+  </header>
+
+  <h1> Trabalhe Conosco </h1>
+
+  <!--Dados Pessoais-->
+
+  <form action="registro.php" method="POST" enctype="multipart/form-data">
+    <h3>Dados Pessoais</h3>
+    <hr class="divisao">
+    <div id="dadosContainer">
+      <div class="container">
+        <div class="coolinput">
+          <label for="input" class="text">Nome:</label>
+          <input type="text" placeholder="Nome" name="Nome" class="input">
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Sobrenome:</label>
+          <input type="text" placeholder="Sobrenome" name="Sobrenome" class="input">
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">CPF:</label>
+          <input type="text" placeholder="CPF (Opcional)" name="CPF" class="input" oninput="formatCPF(this)">
+        </div>
+      </div>
+      <div class="container">
+        <div class="coolinput">
+          <label for="input" class="text">Data de Nascimento:</label>
+          <input type="date" name="Idade" class="input">
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Telefone:</label>
+          <input type="tel" placeholder="(12) 12345-6789" name="Telefone" class="input"  oninput="formatCelular(this)">
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">E-mail:</label>
+          <input type="email" placeholder="seuemail@email.com" name="Email" class="input" >
+        </div>
+      </div>
+      <div class="container" id="container3">
+        <div class="coolinput">
+          <label for="input" class="text">Sexo:</label>
+          <select name="Sexo" id="">
+            <option name="----"></option>
+            <option name="Feminino">Feminino</option>
+            <option name="Masculino">Masculino</option>
+            <option name="Outro">Outro</option>
+          </select>
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Estado Civil:</label>
+          <select name="Estado_Civil" id="">
+            <option name="----"></option>
+            <option name="Solteiro">Solteiro/a</option>
+            <option name="Casado">Casado/a</option>
+            <option name="Viuvo">Viuvo/a</option>
+            <option name="Divorciado">Divorciado/a</option>
+          </select>
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">CNH:</label>
+          <select name="Habilitação" id="CNH">
+            <option name="----"></option>
+            <option name="Não possuo">Não possuo</option>
+            <option name="A">A</option>
+            <option name="B">B</option>
+            <option name="C">C</option>
+            <option name="D">D</option>
+            <option name="AB">AB</option>
+            <option name="AC">AC</option>
+            <option name="AD">AD</option>
+          </select>
+        </div>
+      </div>
+    
+      <!--Imagem-->
+
+      <div class="image-container">
+        <input type="file" name="imagem" id="imageInput" accept="image/*" hidden>
+        <label id="selectImageButton">Inserir Foto</label>
+        <img id="imagePreview" src="" alt="Preview" style="display: none; max-width: 250px; max-height: 250px;">
+      </div>
+    </div>
+
+    <!--Endereço-->
+    
+    <br><br>
+    <h3>Endereço</h3>
+    <hr class="divisao">
+    <div id="enderecoContainer">
+      <div class="container">
+        <div class="coolinput">
+          <label for="input" class="text">CEP:</label>
+          <input type="tel" placeholder="00000-000" name="CEP" class="input" id="cep-input"  onblur="formatCEP(this)" oninput="getEndereco()">
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Logradouro:</label>
+          <input type="text" placeholder="Avenida Ipiranga" id="logradouro-input" name="Logradouro" class="input" >
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Numero:</label>
+          <input type="number" placeholder="Numero" name="Numero" class="input" >
+        </div>
+      </div>
+      <div class="container">
+        <div class="coolinput">
+          <label for="input" class="text">Bairro:</label>
+          <input type="text" placeholder="Bairro" id="bairro-input" name="Bairro" class="input" >
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Estado:</label>
+          <input type="text" id="estado-input" placeholder="Estado" name="Estado" class="input" >
+        </div>
+        <div class="coolinput">
+          <label for="input" class="text">Cidade:</label>
+          <input type="text" id="cidade-input" placeholder="Cidade" name="Cidade" class="input" >
+        </div>
+      </div>
+    </div>
+
+    <!--Interesses-->
+
+    <br><br>
+    <h3>Área de Interesse</h3>
+    <hr class="divisao">
+    <div id="interessesContainer" class="checkbox-wrapper-13">
+      <div class="areas_atuacao">
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="TI" id="">
+          T.I
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Comercial" id="">
+          Comercial
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Financeiro" id="">
+          Financeiro
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Logistica" id="">
+          Logística
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Consultoria" id="">
+          Consultoria
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Marketing" id="">
+          Marketing
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Gestão de Pessoas" id="">
+          Gestão de Pessoas
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Contábil" id="">
+          Contábil
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Vendas" id="">
+          Vendas
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Ecommerce" id="">
+          Ecommerce
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Fábrica" id="">
+          Fábrica
+        </label>
+        <label for="">
+          <input type="checkbox" name="interesses[]" value="Outros" id="">
+          Outros
+        </label>
+      </div>
+    </div>
+
+    <!--Formação-->
+
+    <br><br>
+    <h3>Formação</h3>
+    <hr class="divisao">
+    <div id="formacaoContainer">
+      <div class="checkbox" id="formacao_menu">
+        <h4 class="toggle-header" onclick="toggleFormacaoMenu('formacao_menu')" id="formacao">Formação</h4>
+        <div class="content">
+          <div class="sub-container">
+            <div class="coolinput">
+              <label for="input" class="text">Tipo:</label>
+              <select name="Escolaridade" id="tipo">
+                <option name="----"></option>
+                <option name="Ensino Medio">Ensino Médio Completo</option>
+                <option name="Ensino Medio">Ensino Médio Incompleto</option>
+                <option name="Ensino Fundamental">Ensino Fundamental Completo</option>
+                <option name="Ensino Fundamental">Ensino Fundamental Incompleto</option>
+                <option name="Ensino Superior Completo">Ensino Superior Completo</option>
+                <option name="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                <option name="Pós-Graduação">Pós-Graduação</option>
+                <option name="Curso Tecnico">Curso Tecnico</option>
+              </select>
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Curso:</label>
+              <input type="text" placeholder="Curso" name="Curso" class="input" id="curso" oninput="exibirConteudo1()">
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Instituição:</label>
+              <input type="text" placeholder="Instituição" name="Instituição" class="input" id="instituicao" oninput="exibirConteudo1()" >
+            </div>
+          </div>
+          <div class="sub-container">
+            <div class="coolinput">
+              <label for="input" class="text">Inicio:</label>
+              <input type="month" placeholder="Inicio" name="Início" class="input" >
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Conclusão:</label>
+              <input type="month" placeholder="Conlusão" name="Conclusão" class="input" >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label onclick="adicionarFormacao()" class="adicionar_container">Adicionar</label>
+
+    <!--Experiencias-->
+    
+    <br><br>
+    <h3>Experiencias Profissionais</h3>
+    <hr class="divisao">
+    <div id="experienciaContainer">
+      <div class="checkbox" id="experiencia_menu">
+        <h4 class="toggle-header" onclick="toggleFormacaoMenu('experiencia_menu')" id="experiencia">Experiência</h4>
+        <div class="content">
+          <div class="sub-container">
+            <div class="coolinput">
+              <label for="input" class="text">Empresa:</label>
+              <input type="text" placeholder="Empresa" name="Empresa" class="input" id="empresa" oninput="exibirConteudoExp1()" >
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Cargo:</label>
+              <input type="text" placeholder="Cargo" name="Cargo" class="input" id="cargo" oninput="exibirConteudoExp1()">
+            </div>
+          </div>
+          <div class="sub-container">
+            <div class="coolinput">
+              <label for="input" class="text">Entrada:</label>
+              <input type="month" placeholder="Inicio" name="Entrada" class="input" id="entrada" oninput="exibirConteudoExp1()">
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Saída:</label>
+              <input type="month" placeholder="Saída" name="Saída" class="input" id="saida" oninput="exibirConteudoExp1()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label onclick="adicionarExperiencia()" class="adicionar_container">Adicionar</label>
+
+    <!--Idiomas-->
+
+    <br><br>
+    <h3>Outros Idiomas</h3>
+    <hr class="divisao">
+    <div id="idiomaContainer">
+      <div class="checkbox" id="idiomas_menu">
+        <div class="cabecalho_container">
+          <h4 class="toggle-header" onclick="toggleFormacaoMenu('idiomas_menu')" id="idiomas">Idiomas</h4>
+        </div>
+        <div class="content">
+          <div class="sub-container">
+            <div class="coolinput">
+              <label for="input" class="text">Idioma:</label>
+              <input type="text" placeholder="idioma" name="Idioma" class="input" id="idioma" oninput="exibirConteudoIdi1()">
+            </div>
+            <div class="coolinput">
+              <label for="input" class="text">Nivel:</label>
+              <select name="Nivel" id="nivel" oninput="exibirConteudoIdi1()">
+                <option name="----"></option>
+                <option name="A1 - Iniciante">A1 - Iniciante</option>
+                <option name="A2 - Iniciante Avançado">A2 - Iniciante Avançado</option>
+                <option name="B1 - Intermediário">B1 - Intermediário</option>
+                <option name="B2 - Intermediário Avançado">B2 - Intermediário Avançado</option>
+                <option name="C1 - Proficiente">C1 - Proficiente</option>
+                <option name="C2 - Proficiente Avançado">C2 - Proficiente Avançado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label onclick="adicionarIdioma()" class="adicionar_container">Adicionar</label>
+
+    <button type="submit" id="submit">Enviar</button>
+  </form>
+
+  <script>
+    // Função para exibir a pré-visualização da imagem quando o usuário seleciona um arquivo
+    document.getElementById('imageInput').addEventListener('change', function (e) {
+    var imagePreview = document.getElementById('imagePreview');
+      if (e.target.files.length > 0) {
+        var file = e.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+          imagePreview.src = event.target.result;
+          imagePreview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(file);
+      } else {
+        imagePreview.style.display = 'none';
+      }
+    });
+
+    document.getElementById('selectImageButton').addEventListener('click', function () {
+        document.getElementById('imageInput').click();
+    });
+
+    document.getElementById('imageInput').addEventListener('change', function (e) {
+        var imagePreview = document.getElementById('imagePreview');
+        if (e.target.files.length > 0) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+        
+            reader.onload = function (event) {
+                imagePreview.src = event.target.result;
+                imagePreview.style.display = 'block';
+            };
+          
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.style.display = 'none';
+        }
+    });
+  </script>
+  <br><br><br>
+</body>
+</html>
