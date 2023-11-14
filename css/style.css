@@ -141,6 +141,23 @@ h4 {
     margin-left: 5%;
 }
 
+#descricao {
+    position: absolute; 
+    left: 38%; 
+    margin-top: .3%;
+}
+
+textarea {
+    width: 300px;
+    height: 112px;
+    border: 2px solid #284c7c;
+    border-radius: 8px;
+    background-color: #F8F7F3;
+    text-indent: 1%;
+    padding-top: 2.5%;
+    resize: none;
+}
+
 .adicionar_container, #submit {
     display: flex;
     color: #373636;
@@ -364,7 +381,14 @@ h4 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
-} 
+}
+
+footer {
+    padding: 2%;
+    text-align: center;
+    color: white;
+    background-color: #284c7c;
+}
 
 @media screen and (max-width: 1024px) {
 
@@ -413,6 +437,22 @@ h4 {
         position: absolute;
         margin-top: 0.1rem;
         left: 13rem;
+    }
+
+    #descricao {
+        position: relative;
+        left: -4%;
+    }
+
+    textarea {
+        width: 300px;
+        height: 112px;
+        border: 2px solid #284c7c;
+        border-radius: 8px;
+        background-color: #F8F7F3;
+        text-indent: 1%;
+        padding-top: 2.5%;
+        resize: none;
     }
 }
 
@@ -474,6 +514,10 @@ h4 {
     .remover_container img {
         margin-top: 0.1rem;
         left: 5.5rem;
+    }
+
+    #descricao {
+        left: -8%;
     }
 }
 

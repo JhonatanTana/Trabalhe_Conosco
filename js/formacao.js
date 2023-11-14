@@ -19,7 +19,7 @@ function adicionarFormacao() {
       <div class="checkbox" id="formacao_menu${contadorFormacoes}">
         <h4 class="toggle-header" onclick="toggleFormacaoMenu('formacao_menu${contadorFormacoes}')" id="formacao${contadorFormacoes}">Formação</h4>
         <label class="remover_container" onclick="removerContainer(this)"><img src="src/lixo.png" alt=""></label>
-        <div class="content">
+        <div class="content" style="display:none">
           <div class="sub-container">
             <div class="coolinput">
               <label for="input" class="text">Tipo:</label>
@@ -73,7 +73,7 @@ function adicionarExperiencia() {
     <div class="checkbox" id="experiencia_menu${contadorExperiencias}">
     <h4 class="toggle-header" onclick="toggleFormacaoMenu('experiencia_menu${contadorExperiencias}')" id="experiencia${contadorExperiencias}">Experiência</h4>
     <label class="remover_container" onclick="removerContainer(this)"><img src="src/lixo.png" alt=""></label>
-    <div class="content">
+    <div class="content" style="display:none">
       <div class="sub-container">
         <div class="coolinput">
           <label for="input" class="text">Empresa:</label>
@@ -94,6 +94,12 @@ function adicionarExperiencia() {
           <input type="month" placeholder="Saída" name="Saída${contadorExperiencias}" class="input" id="saida${contadorExperiencias}" onblur="exibirConteudoExp(${contadorExperiencias})">
           </div>
       </div>
+      <div class="sub-container" id="descricao">
+        <div class="coolinput">
+          <label class="text">Descrição:</label>
+          <textarea placeholder="Descrição" name="Descricao${contadorExperiencias}" class="input"></textarea>
+        </div>
+      </div>
     </div>
   </div>
   `;
@@ -113,7 +119,7 @@ function adicionarIdioma() {
     <div class="checkbox" id="idiomas_menu${contadorIdiomas}">
       <h4 class="toggle-header" onclick="toggleFormacaoMenu('idiomas_menu${contadorIdiomas}')" id="idiomas${contadorIdiomas}">Idiomas</h4>      
       <label class="remover_container" onclick="removerContainer(this)"><img src="src/lixo.png" alt=""></label>
-      <div class="content">
+      <div class="content" style="display:none">
         <div class="sub-container">
           <div class="coolinput">
             <label for="input" class="text">Idioma:</label>

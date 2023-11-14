@@ -18,6 +18,24 @@
     $cidade = $_POST['Cidade'];
     $estado = $_POST['Estado'];
 
+    //Armazenador das fotos
+
+    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+        $diretorio = 'fotos/';
+
+        $nomeArquivo = $nome . ' '. $sobrenome. '-'. $cpf.'.png';
+
+        if (move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $nomeArquivo)) {
+            // Se você quiser salvar o nome do arquivo no banco de dados, você pode fazê-lo aqui
+
+            echo "";
+        } else {
+            echo "";
+        }
+    } else {
+        echo "";
+    }
+
     //Interreses
 
     $interesses = isset($_POST['interesses']) ? $_POST['interesses'] : [];
@@ -96,25 +114,7 @@
     
     fclose($arquivo);
 
-    //header('Location: index.html');
-
-    //Armazenador das fotos
-
-    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-        $diretorio = 'fotos/';
-
-        $nomeArquivo = $nome . ' '. $sobrenome. '-'. $cpf.'.png';
-
-        if (move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio . $nomeArquivo)) {
-            // Se você quiser salvar o nome do arquivo no banco de dados, você pode fazê-lo aqui
-
-            echo "Arquivo enviado com sucesso!";
-        } else {
-            echo "Ocorreu um erro ao enviar o arquivo.";
-        }
-    } else {
-        echo "Ocorreu um erro no envio do arquivo.";
-    }
-
+    echo '<script>alert("Formulário enviado com sucesso!");</script>';
+    header('Location:index.html');
 
 ?>

@@ -159,8 +159,8 @@
           Logística
         </label>
         <label for="">
-          <input type="checkbox" name="interesses[]" value="Consultoria">
-          Consultoria
+          <input type="checkbox" name="interesses[]" value="Jovem Aprendiz">
+          Jovem Aprendiz
         </label>
         <label for="">
           <input type="checkbox" name="interesses[]" value="Marketing">
@@ -201,7 +201,7 @@
     <div id="formacaoContainer">
       <div class="checkbox" id="formacao_menu">
         <h4 onclick="toggleFormacaoMenu('formacao_menu')" class="toggle-header" id="formacao">Formação</h4>
-        <div class="content">
+        <div class="content" style="display:none">
           <div class="sub-container">
             <div class="coolinput">
               <label class="text">Tipo:</label>
@@ -249,7 +249,7 @@
     <div id="experienciaContainer">
       <div class="checkbox" id="experiencia_menu">
         <h4 class="toggle-header" onclick="toggleFormacaoMenu('experiencia_menu')" id="experiencia">Experiência</h4>
-        <div class="content">
+        <div class="content" style="display:none">
           <div class="sub-container">
             <div class="coolinput">
               <label class="text">Empresa:</label>
@@ -270,6 +270,12 @@
               <input type="month" placeholder="Saída" name="Saída0" class="input" id="saida" oninput="exibirConteudoExp1()">
             </div>
           </div>
+          <div class="sub-container" id="descricao">
+            <div class="coolinput">
+              <label class="text">Descrição:</label>
+              <textarea placeholder="Descrição" name="Descricao0" class="input"></textarea>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -285,7 +291,7 @@
         <div class="cabecalho_container">
           <h4 class="toggle-header" onclick="toggleFormacaoMenu('idiomas_menu')" id="idiomas">Idiomas</h4>
         </div>
-        <div class="content">
+        <div class="content" style="display:none">
           <div class="sub-container">
             <div class="coolinput">
               <label class="text">Idioma:</label>
@@ -311,6 +317,11 @@
 
     <button type="submit" id="submit">Enviar</button>
   </form>
+
+  <br><br><br><br>
+  <footer>
+    AT GARCIA MATERIAIS DE CONSTRUÇÃO LTDA  |  Copyright© 2023 | TODOS OS DIREITOS RESERVADOS.
+  </footer>
 
   <script>
     // Função para exibir a pré-visualização da imagem quando o usuário seleciona um arquivo
@@ -352,6 +363,5 @@
         }
     });
   </script>
-  <br><br><br>
 </body>
 </html>
