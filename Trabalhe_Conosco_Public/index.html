@@ -37,7 +37,7 @@
         </div>
         <div class="coolinput">
           <label class="text">CPF:</label>
-          <input type="text" placeholder="CPF (Opcional)" name="CPF" class="input" oninput="formatCPF(this)">
+          <input type="text" placeholder="CPF" name="CPF" class="input" oninput="formatCPF(this)">
         </div>
       </div>
       <div class="container">
@@ -89,7 +89,7 @@
           </select>
         </div>
       </div>
-    
+
       <!--Imagem-->
 
       <div class="image-container">
@@ -100,7 +100,7 @@
     </div>
 
     <!--Endereço-->
-    
+
     <br><br>
     <h3>Endereço</h3>
     <hr class="divisao">
@@ -187,6 +187,10 @@
           Fábrica
         </label>
         <label for="">
+          <input type="checkbox" name="interesses[]" value="Engenharia Civil/Produção">
+          Engenharia Civil/Produção
+        </label>
+        <label for="">
           <input type="checkbox" name="interesses[]" value="Outros">
           Outros
         </label>
@@ -242,7 +246,7 @@
     <label onclick="adicionarFormacao()" class="adicionar_container">Adicionar</label>
 
     <!--Experiencias-->
-    
+
     <br><br>
     <h3>Experiencias Profissionais</h3>
     <hr class="divisao">
@@ -351,12 +355,12 @@
         if (e.target.files.length > 0) {
             var file = e.target.files[0];
             var reader = new FileReader();
-        
+
             reader.onload = function (event) {
                 imagePreview.src = event.target.result;
                 imagePreview.style.display = 'block';
             };
-          
+
             reader.readAsDataURL(file);
         } else {
             imagePreview.style.display = 'none';

@@ -461,6 +461,10 @@ footer {
     .remover_container img {
         left: 6.5rem;
     }
+
+    #descricao {
+        left: -7%;
+    }
 }
 
 @media screen and (max-width: 425px) {

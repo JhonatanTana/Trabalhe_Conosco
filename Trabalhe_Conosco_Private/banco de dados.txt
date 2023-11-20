@@ -1,0 +1,53 @@
+CREATE TABLE tb_dados_pessoais (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(100),
+    Sobrenome VARCHAR(100),
+    CPF VARCHAR(14),
+    DataNascimento DATE,
+    Telefone VARCHAR(20),
+    Email VARCHAR(100),
+    Sexo VARCHAR(10),
+    EstadoCivil VARCHAR(20),
+    Habilitacao VARCHAR(10)
+);
+
+CREATE TABLE tb_endereco (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    CEP VARCHAR(10),
+    Logradouro VARCHAR(100),
+    Numero VARCHAR(10),
+    Bairro VARCHAR(100),
+    Cidade VARCHAR(100),
+    Estado VARCHAR(100),
+    Interesses VARCHAR(255)
+);
+
+CREATE TABLE tb_experiencias (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    DadosPessoaisID INT,
+    empresa VARCHAR(100),
+    cargo VARCHAR(100),
+    entrada DATVARCHAR(8)E,
+    saida VARCHAR(8),
+    descricao TEXT,
+    FOREIGN KEY (DadosPessoaisID) REFERENCES tb_dados_pessoais(ID)
+);
+
+CREATE TABLE tb_estudos (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    DadosPessoaisID INT,
+    escolaridade VARCHAR(100),
+    curso VARCHAR(100),
+    instituicao VARCHAR(100),
+    inicio VARCHAR(8),
+    conclusao VARCHAR(8),
+    FOREIGN KEY (DadosPessoaisID) REFERENCES tb_dados_pessoais(ID)
+);
+
+CREATE TABLE tb_idiomas (
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    DadosPessoaisID INT,
+    idioma VARCHAR(100),
+    nivel VARCHAR(50),
+    FOREIGN KEY (DadosPessoaisID) REFERENCES tb_dados_pessoais(ID)
+);
